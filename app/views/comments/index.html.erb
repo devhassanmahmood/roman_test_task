@@ -1,0 +1,19 @@
+<%= link_to "Back", @post, class: 'btn btn-sm btn-success'%>
+<div class="container">
+    <h1>Comments</h1>
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
+      <% @comments.each do |comment| %>
+      <div class="my-3 form_row">
+        <div class="card">
+          <h3 class="card-title card-header text-dark text-center"><%= link_to comment.body, post_comment_path(@post, comment)%></h3>
+          <div class="btn-group card-footer" role="group">
+            <%= link_to "Edit", edit_post_comment_path(@post,comment), class: 'btn btn-sm btn-primary'%>
+            <%= link_to "Delete", post_comment_path(@post,comment), method: :delete, class: 'btn btn-sm btn-danger' %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

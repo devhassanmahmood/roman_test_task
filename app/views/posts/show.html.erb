@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row ">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-signin my-5 form_row">
+        <h3 class="card-title card-header text-dark text-center"><%= @post.title %></h3>
+        <div class="card-body">
+          <p><%= @post.description %></p>
+        </div>
+        <div class="btn-group card-footer" role="group" aria-label="Basic example">
+            <%= link_to "Edit", edit_post_path(@post), class: 'btn btn-sm btn-primary' %>
+            <%= link_to "Delete", @post, method: :delete, class: 'btn btn-sm btn-danger' %>
+            <%= link_to "Show Comment", post_comments_path(@post), class: 'btn btn-sm btn-success' %>
+            <%= link_to "Add new Comment", new_post_comment_path(@post), class: 'btn btn-sm btn-info' %>
+            <%= link_to "Back", posts_path, class: 'btn btn-sm btn-success'%>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

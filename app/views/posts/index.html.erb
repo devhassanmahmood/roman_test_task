@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
+    <%= link_to "Create New Post", new_post_path, class:"btn btn-dark mb-4 w-100"%>
+      <% @posts.each do |post| %>
+      <div class="my-3 form_row">
+        <div class="card">
+          <h3 class="card-title card-header text-dark text-center"><%= link_to post.title, post%></h3>
+          <div class="card-body">
+            <p ><%= post.description %></p>
+          </div>
+          <div class="btn-group card-footer" role="group" aria-label="Basic example">
+            <%= link_to "Preview", post, class: 'btn btn-sm btn-success'%>
+            <%= link_to "Edit", edit_post_path(post), class: 'btn btn-sm btn-primary'%>
+            <%= link_to "Delete", post, method: :delete, class: 'btn btn-sm btn-danger' %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
